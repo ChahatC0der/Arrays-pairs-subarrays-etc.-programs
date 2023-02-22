@@ -1,0 +1,39 @@
+import java.lang.Math; 
+import java.util.Scanner; 
+public class javabasics{ 
+    public static void maxSubArraySum(int Arr[]){
+        int totalSubarrays=0;
+        int subaraySum=0;
+        int maxsubarraysum=subaraySum;
+        for(int i=0;i<Arr.length;i++){
+           
+            for(int j=i;j<Arr.length;j++){
+                System.out.print("(");
+                for(int k=i;k<=j;k++){
+                System.out.print(Arr[k]);
+                subaraySum=subaraySum+Arr[k];
+            }
+            if(subaraySum>maxsubarraysum){
+                maxsubarraysum=subaraySum;
+            }
+            totalSubarrays++;
+            subaraySum=0;
+                System.out.print(")");
+            }
+            System.out.println();
+        }
+        System.out.println("total subarays are:"+totalSubarrays);
+        System.out.println("maximum subarary sum:"+maxsubarraysum);
+
+    }
+
+        
+    
+    public static void main(String args[]){ 
+        Scanner sc = new Scanner(System.in); 
+        int Arr[]={1,2,3,4,5};
+        maxSubArraySum(Arr);
+        
+        
+    } 
+}
